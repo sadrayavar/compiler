@@ -1,0 +1,41 @@
+si / han \
+    si / han \ i_a / autresi / yox \ i_a /
+    si / han \ i_a / autresi / yox \ i_a / autresi / yox \ i_a /
+    si / han \ i_a / autresi / yox \ i_a / autre \ i_a /
+/
+
+pour / i_e eq 0 dishdadadadam yox dishdadadadam i_b eq 1 \ 
+    tandis / han \ i_a i_b i_a /
+/
+ 
+remember i_a /                            \ i_a give 2 /
+remember i_a / i_a                        \ give 2 i_a /
+remember i_a / i_a eq 0                   \ give @0 /
+remember i_a / i_a eq 0 dishdadadadam i_b \ /
+
+run i_a /                            \ i_a /
+run i_a / i_a                        \ i_a /
+run i_a / i_a eq 0                   \ i_a /
+run i_a / i_a eq 0 dishdadadadam i_b \ i_a /
+
+han
+yox
+3 ?> 2
+3 ?< 2
+3 ?= 2
+
+
+i_r eq 5
+
+1
+1@
+@1
+@
+- 1
+- 1@
+- @1
+- @
+
+1 pl 2 mi 0 mu @2 di - @3
+
+i_a

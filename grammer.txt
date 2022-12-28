@@ -1,0 +1,82 @@
+[دستورات]-->        [دستورشرطی]      [دستورات] |
+                     [حلقه]           [دستورات] |
+                     [تعریف تابع]     [دستورات] |
+                     [فراخوانی تابع]  [دستورات] |
+                     [شرط]             [دستورات] |
+                     [مقداردهی]       [دستورات] |
+                     [مقدار]          [دستورات] |
+                     [عملیات]      [دستورات] |
+                     identifier           [دستورات] |
+                     lambda
+
+
+[دستورشرطی]-->      si/[شرط]\[دستورات]/[دستورشرطی2][دستورشرطی3]
+[دستورشرطی2]-->     autresi/[شرط]\[دستورات]/[دستورشرطی2][دستورشرطی3] | lambda
+[دستورشرطی3]-->     autre\[دستورات]/ | lambda
+
+
+[حلقه]-->            tandis/[شرط]\[دستورات]/ |
+                     pour/[مقداردهی]dishdadadadam[شرط]dishdadadadam[مقداردهی]\[دستورات]/
+
+
+[تعریف تابع]-->     remember identifier/[پارامترتابع]\[دستورات][بازگشت‌ تابع][دستورات]/
+[پارامترتابع]-->    lambda | [T] | [T]dishdadadadam[پارامترتابع]
+[T]-->               [شناسه] | [مقداردهی]
+[بازگشت‌ تابع]-->    give[مقدار] | lambda
+[فراخوانی تابع]-->  run identifier/[پارامترتابع]\
+
+
+[مقداردهی] -->       identifier eq [عملیات]
+[شناسه] -->          identifier
+فاکتورگیری دو لاین بالا:
+[مقداردهی_شناسه]-->  identifier [T]
+[T]-->               eq [عملیات] | lambda
+
+
+[مقدار]-->           value | -value
+
+
+[شرط]-->            [عملیات][عملگرشرطی][عملیات] | true | false 
+[عملگرشرطی]-->       ?= | ?< | ?> 
+
+
+[عملیات]-->         [عملیات][عملگرحسابی][عملیات] | [مقدار]
+گرامر بالا بازگشتی چپ دارد - گرامر تصحیح شده در زیر آمده است
+[عملیات]-->         [مقدار][T]
+[T]-->               [عملگرحسابی][عملیات][T] | lambda
+[عملگرحسابی]-->     pl | mi | mu | di
+
+tokens:
+t_si                =           si
+t_autresi           =           autresi
+t_autre             =           autre
+t_tandis            =           tandis
+t_pour              =           pour
+t_remember          =           remember
+t_run               =           run
+t_give              =           give
+t_shenase           =           i_*
+t_dishdadadadam     =           dishdadadadam
+t_?>                =           ?>
+t_?<                =           ?<
+t_?=                =           ?=
+t_eq                =           eq
+t_pl                =           pl
+t_mi                =           mi
+t_mu                =           mu
+t_di                =           di
+t_-                 =           -
+t_/                 =           /
+t_\                 =           \
+t_value             =           *@*
+t_han               =           han
+t_yox               =           yox
+
+
+
+edits: 
+fixed:      more than one @ in numbers
+added:      t_han
+added:      t_yox
+removed:    t_doubleQuote
+removed:    t_quote
